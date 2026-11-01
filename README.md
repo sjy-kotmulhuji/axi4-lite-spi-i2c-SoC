@@ -145,7 +145,7 @@
 
 
 
-| SPI Software 계층 구조 |
+| SPI Firmware 계층 구조 |
 |------|
 | <img width="663" height="328" alt="image" src="https://github.com/user-attachments/assets/e856cac6-094d-4582-a74c-b368430fb8a4" /> |
 
@@ -192,7 +192,7 @@ https://github.com/user-attachments/assets/c0332eb1-d416-4c00-93da-54574db06e53
 ---
 
 
-| I2C Software 계층 구조 |
+| I2C Firmware 계층 구조 |
 |------|
 | <img width="1550" height="757" alt="image" src="https://github.com/user-attachments/assets/347d5679-ba0a-4b39-ada3-a43d1808f9d1" /> |
 
