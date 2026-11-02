@@ -102,7 +102,7 @@
 
 | IP | 설명 |
 |----|------|
-| **MicroBlaze** | Xilinx Soft Processor IP, AXI Master로 동작 |
+| **MicroBlaze** | Xilinx Soft Processor IP, CPU이자 AXI Master로 동작 |
 | **AXI Uartlite** | `xil_printf`로 시리얼 데이터를 PC로 전송, 디버깅 용도 |
 | **AXI Peripheral (Slave) IP** | Vivado AXI Slave 템플릿에 직접 설계한 RTL 로직 연결 |
 
