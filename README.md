@@ -8,7 +8,6 @@
 
 ## 프로젝트 개요
 
-- MicroBlaze 기반 **SoC 시스템** 구성 (Vivado Block Design)
 - MicroBlaze CPU와 **AXI4-Lite** 프로토콜로 통신하는 **SPI Master / I2C Master IP** 설계
 - **HAL 기반 계층형 MMIO C Firmware** 구현
 - FPGA 보드를 이용한 Master – Slave 동작 검증
