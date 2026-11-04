@@ -142,8 +142,6 @@
 
 ---
 
-
-
 | SPI Firmware 계층 구조 |
 |------|
 | <img width="663" height="328" alt="image" src="https://github.com/user-attachments/assets/e856cac6-094d-4582-a74c-b368430fb8a4" /> |
@@ -158,11 +156,34 @@
 
 ---
 
-### FPGA 데모 영상
+## AXI SPI 검증
+
+### FPGA 보드 동작 검증
 
 https://github.com/user-attachments/assets/c0332eb1-d416-4c00-93da-54574db06e53
 
 ---
+
+### UVM 검증
+
+#### 검증 시나리오
+
+| 시나리오 | 내용 |
+|---------|------|
+| Write (Master → Slave) | `m_tx_data`가 `s_rx_data`로 정상 전달되는지 확인 |
+| Read (Slave → Master) | `s_tx_data`가 `m_rx_data`로 정상 전달되는지 확인 |
+| 동작 신호 확인 | SCLK 데이터 송수신 상태에서만 활성화 확인, `done` 신호 펄스 출력 확인 |
+
+#### 검증 결과
+
+| 항목 | 결과 | 
+|------|------|
+| **Waveform** | <img width="800" height="300" alt="image" src="https://github.com/user-attachments/assets/588df82e-d404-45eb-9b88-48cd16b747df" /> |
+| **Log** | <img width="300" height="100" alt="image" src="https://github.com/user-attachments/assets/d577efa8-714e-496f-964c-bf04f6bd1dd5" />|
+| **Coverage** | <img width="539" height="197" alt="image" src="https://github.com/user-attachments/assets/2a97d3de-8384-4746-ae18-5feaa87afd20" /> |
+
+---
+
 
 ## AXI I2C
 
@@ -198,31 +219,15 @@ https://github.com/user-attachments/assets/c0332eb1-d416-4c00-93da-54574db06e53
 
 ---
 
-### FPGA 데모 영상
+## AXI I2C 검증
+
+### FPGA 보드 동작 검증
 
 https://github.com/user-attachments/assets/ca08216b-e776-4630-9610-6959718e62ab
 
 ---
 
-## AXI SPI UVM 검증
 
-### 검증 시나리오
-
-| 시나리오 | 내용 |
-|---------|------|
-| Write (Master → Slave) | `m_tx_data`가 `s_rx_data`로 정상 전달되는지 확인 |
-| Read (Slave → Master) | `s_tx_data`가 `m_rx_data`로 정상 전달되는지 확인 |
-| 동작 신호 확인 | SCLK 데이터 송수신 상태에서만 활성화 확인, `done` 신호 펄스 출력 확인 |
-
-### 검증 결과
-
-| 항목 | 결과 | 
-|------|------|
-| **Waveform** | <img width="800" height="300" alt="image" src="https://github.com/user-attachments/assets/588df82e-d404-45eb-9b88-48cd16b747df" /> |
-| **Log** | <img width="300" height="100" alt="image" src="https://github.com/user-attachments/assets/d577efa8-714e-496f-964c-bf04f6bd1dd5" />|
-| **Coverage** | <img width="539" height="197" alt="image" src="https://github.com/user-attachments/assets/2a97d3de-8384-4746-ae18-5feaa87afd20" /> |
-
----
 
 ## Trouble Shooting
 
