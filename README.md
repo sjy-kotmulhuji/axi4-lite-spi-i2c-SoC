@@ -146,7 +146,9 @@
 | <img width="1215" height="474" alt="image" src="https://github.com/user-attachments/assets/813019e2-ef01-4db4-8ceb-ff484bc37a18" /> | 
 
 #### SoC 구성
-<img width="1810" height="811" alt="image" src="https://github.com/user-attachments/assets/87ecaa18-90a4-4f79-8788-651ca4436e6b" />
+| SPI Master IP Block Design |
+|------|
+| <img width="1810" height="811" alt="image" src="https://github.com/user-attachments/assets/87ecaa18-90a4-4f79-8788-651ca4436e6b" /> |
 
 #### GPIO 구성
 
@@ -199,8 +201,9 @@ https://github.com/user-attachments/assets/c0332eb1-d416-4c00-93da-54574db06e53
 
 
 #### SoC 구성
-<img width="903" height="456" alt="image" src="https://github.com/user-attachments/assets/397cb32f-37dd-4080-aef1-072a437f3d44" />
-
+| I2C Master IP Block Design |
+|------|
+| <img width="903" height="456" alt="image" src="https://github.com/user-attachments/assets/397cb32f-37dd-4080-aef1-072a437f3d44" /> |
 
 #### GPIO 구성
 
