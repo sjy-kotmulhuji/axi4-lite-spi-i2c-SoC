@@ -52,7 +52,7 @@
 
 ### 채널 구성
 
-<img width="1772" height="1001" alt="image" src="https://github.com/user-attachments/assets/47a46793-0e3e-47a0-88ae-74c602b72790" />
+<img width="3666" height="2106" alt="image" src="https://github.com/user-attachments/assets/591a390f-a20e-48b9-ab0e-3a5f181d4bf3" />
 
 - **Handshaking** 방식 : 각 채널의 **VALID와 READY가 모두 1**이 되는 클락 엣지에서 해당 채널의 트랜잭션 완료
 
