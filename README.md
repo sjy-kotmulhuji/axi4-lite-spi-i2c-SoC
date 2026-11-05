@@ -52,7 +52,11 @@
 
 ### 채널 구성
 
-<img width="3666" height="2106" alt="image" src="https://github.com/user-attachments/assets/591a390f-a20e-48b9-ab0e-3a5f181d4bf3" />
+| AXI4-Lite Block Diagram | 
+| ------ |
+| <img width="3666" height="2106" alt="image" src="https://github.com/user-attachments/assets/591a390f-a20e-48b9-ab0e-3a5f181d4bf3" /> |
+
+
 
 - **Handshaking** 방식 : 각 채널의 **VALID와 READY가 모두 1**이 되는 클락 엣지에서 해당 채널의 트랜잭션 완료
 
@@ -72,7 +76,8 @@
 
 | Timing Diagram | FSM |
 | ------ | ------ |
-| <img width="900" height="496" alt="image" src="https://github.com/user-attachments/assets/3a0368a7-5567-49df-af69-80b60c66666f" /> | <img width="400" height="550" alt="image" src="https://github.com/user-attachments/assets/b02d9101-8981-4015-b0a1-a01c8d8be588" /> |
+| <img width="900" height="496" alt="image" src="https://github.com/user-attachments/assets/3a0368a7-5567-49df-af69-80b60c66666f" /> | <img width="437" height="503" alt="image" src="https://github.com/user-attachments/assets/6db828ed-522a-4281-beb4-a6bdccabc049" />
+ |
 
 
 
