@@ -165,6 +165,7 @@
 ### 3-5. SPI Master IP 검증
 
 - **FPGA 보드 동작 검증**
+
 보드 두 개를 이용해 SPI 통신 동작 확인
 
 https://github.com/user-attachments/assets/c0332eb1-d416-4c00-93da-54574db06e53
