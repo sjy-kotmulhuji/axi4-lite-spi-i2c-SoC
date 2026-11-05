@@ -76,7 +76,7 @@
 
 | Timing Diagram | FSM |
 | ------ | ------ |
-| <img width="900" height="496" alt="image" src="https://github.com/user-attachments/assets/3a0368a7-5567-49df-af69-80b60c66666f" /> | <img width="550" height="810" alt="image" src="https://github.com/user-attachments/assets/84a18973-26cf-432e-888a-31c3925fe53c" /> |
+| <img width="900" height="496" alt="image" src="https://github.com/user-attachments/assets/3a0368a7-5567-49df-af69-80b60c66666f" /> | <img width="600" height="810" alt="image" src="https://github.com/user-attachments/assets/84a18973-26cf-432e-888a-31c3925fe53c" /> |
 
 
 
@@ -84,7 +84,7 @@
 
 | Timing Diagram | FSM |
 | ------ | ------ |
-| <img width="1630" height="656" alt="image" src="https://github.com/user-attachments/assets/332f8e5b-6c2f-47ec-a308-c3d38ce0391d" />| <img width="925" height="890" alt="image" src="https://github.com/user-attachments/assets/f3a7552e-7ff0-4a5d-9ff4-942fbf3f2a34" />|
+| <img width="1630" height="656" alt="image" src="https://github.com/user-attachments/assets/332f8e5b-6c2f-47ec-a308-c3d38ce0391d" />| <img width="900" height="910" alt="image" src="https://github.com/user-attachments/assets/9feb440e-75a4-47b8-b586-31feaa59a2ac" /> |
 
 ---
 
@@ -94,7 +94,7 @@
 
 | Write FSM | Read FSM |
 | ------ | ------ |
-| <img width="400" height="550" alt="image" src="https://github.com/user-attachments/assets/52049aca-5a18-46a7-b9b4-9b5b19915847" /> | <img width="400" height="350" alt="image" src="https://github.com/user-attachments/assets/44b2d7ed-bec1-4725-a54d-5fb67f082bb3" /> |
+| <img width="420" height="550" alt="image" src="https://github.com/user-attachments/assets/cce31097-2644-4888-99c5-ebc15751cd56" /> | <img width="420" height="370" alt="image" src="https://github.com/user-attachments/assets/fc8c1dc9-571b-4940-a947-2fa629e9824a" /> |
 
 
 ---
