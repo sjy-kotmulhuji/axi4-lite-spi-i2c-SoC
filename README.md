@@ -6,7 +6,7 @@
 
 ---
 
-## 프로젝트 개요
+## 1. 프로젝트 개요
 
 - MicroBlaze CPU와 **AXI4-Lite** 프로토콜로 통신하는 **SPI Master / I2C Master IP** 설계
 - **HAL 기반 계층형 MMIO C Firmware** 구현
@@ -15,7 +15,7 @@
 
 ---
 
-## 개발 환경
+## 2. 개발 환경
 
 <table>
 <tr><td><b>Language</b></td><td>
@@ -35,10 +35,11 @@
 </table>
 
 ---
+## 3. 핵심 구현 내용
 
-## AXI (Advanced eXtensible Interface)
+### 3-1. AXI4-Lite 프로토콜 설계
 
-### 개요
+#### AXI 개요
 | AXI Protocol | 
 | ------ |
 | <img width="1118" height="215" alt="image" src="https://github.com/user-attachments/assets/b5cb0580-2521-4390-909b-076a06fd1b5d" /> |
@@ -50,13 +51,11 @@
 
 ---
 
-### 채널 구성
+#### 채널 구성
 
 | AXI4-Lite Block Diagram | 
 | ------ |
 | <img width="3666" height="2106" alt="image" src="https://github.com/user-attachments/assets/591a390f-a20e-48b9-ab0e-3a5f181d4bf3" /> |
-
-
 
 - **Handshaking** 방식 : 각 채널의 **VALID와 READY가 모두 1**이 되는 클락 엣지에서 해당 채널의 트랜잭션 완료
 
@@ -70,17 +69,16 @@
 
 ---
 
-### AXI Master 
+#### AXI4-Lite Master 설계
 
-#### Write Transaction
+- **Write Transaction** 
 
 | Timing Diagram | FSM |
 | ------ | ------ |
 | <img width="900" height="496" alt="image" src="https://github.com/user-attachments/assets/3a0368a7-5567-49df-af69-80b60c66666f" /> | <img width="600" height="810" alt="image" src="https://github.com/user-attachments/assets/84a18973-26cf-432e-888a-31c3925fe53c" /> |
 
 
-
-#### Read Transaction
+- **Read Transaction**
 
 | Timing Diagram | FSM |
 | ------ | ------ |
@@ -88,20 +86,19 @@
 
 ---
 
-### AXI Slave 
+#### AXI4-Lite Slave 설계
 
-#### Write/Read Transaction
+- **Write/Read Transaction**
 
 | Write FSM | Read FSM |
 | ------ | ------ |
 | <img width="420" height="550" alt="image" src="https://github.com/user-attachments/assets/cce31097-2644-4888-99c5-ebc15751cd56" /> | <img width="420" height="370" alt="image" src="https://github.com/user-attachments/assets/fc8c1dc9-571b-4940-a947-2fa629e9824a" /> |
 
-
 ---
 
-## SoC 구성
+### 3-2. SoC 구성
 
-### IP 구성
+- **IP 구성**
 
 | IP | 설명 |
 |----|------|
@@ -115,40 +112,20 @@
 - SPI Master
 - I2C Master
 
-## Software 설계
-
-### HAL 기반 Layered Architecture
-- Software 시스템을 **관심사(기능)** 에 따라 여러 계층으로 분리하여 설계하는 방법
-- **HAL (Hardware Abstraction Layer)** : Hardware와 OS 사이의 인터페이스 역할을 하는 Software 계층
-- 상위 Software 계층이 하드웨어 동작을 신경 쓸 필요 없이 HAL 함수 호출만으로 동작 가능
-- 상위 계층은 바로 아래 계층에만 접근 가능
-
-## AXI SPI IP
-
-### Block Diagram
-
-| Block Diagram 및 레지스터 주소 맵핑 |
-|------|
-| <img width="1215" height="474" alt="image" src="https://github.com/user-attachments/assets/813019e2-ef01-4db4-8ceb-ff484bc37a18" /> | 
-
-### SoC 구성
-<img width="1810" height="811" alt="image" src="https://github.com/user-attachments/assets/87ecaa18-90a4-4f79-8788-651ca4436e6b" />
-
-### GPIO 구성
-
-| 포트 | 연결 |
-|------|------|
-| `GPIOA[7:0]` | switch[7:0] |
-| `GPIOB[7:0]` | LED[7:0] |
-| `GPIOC[7:0]` | fnd_data[7:0] |
-| `GPIOD[3:0]` | fnd_digit[3:0] |
-| `GPIOD[7:4]` | 상하좌우 Button |
-
 ---
 
-| SPI Firmware 계층 구조 |
+### 3-3. C 펌웨어 설계
+
+- **계층형 펌웨어**
+  - Software 시스템을 **관심사(기능)** 에 따라 여러 계층으로 분리하여 설계하는 방법
+  - HAL, Driver, Application 3개의 계층으로 분리된 구조
+  - 상위 계층은 바로 아래 계층에만 접근 가능
+  - 상위 Software 계층이 하드웨어 동작을 신경 쓸 필요 없이 HAL 함수 호출만으로 동작 가능
+
+
+| Firmware 계층 구조 |
 |------|
-| <img width="663" height="328" alt="image" src="https://github.com/user-attachments/assets/e856cac6-094d-4582-a74c-b368430fb8a4" /> |
+| <img width="2010" height="996" alt="image" src="https://github.com/user-attachments/assets/57cae4c2-e7c6-442c-b958-09e7572e0e8d" /> | 
 
 **계층 별 역할**
 
@@ -160,15 +137,38 @@
 
 ---
 
-## AXI SPI 검증
+### 3-4. SPI Master IP 설계
 
-### FPGA 보드 동작 검증
+#### Block Diagram
 
+| Block Diagram 및 레지스터 주소 맵핑 |
+|------|
+| <img width="1215" height="474" alt="image" src="https://github.com/user-attachments/assets/813019e2-ef01-4db4-8ceb-ff484bc37a18" /> | 
+
+#### SoC 구성
+<img width="1810" height="811" alt="image" src="https://github.com/user-attachments/assets/87ecaa18-90a4-4f79-8788-651ca4436e6b" />
+
+#### GPIO 구성
+
+| 포트 | 연결 |
+|------|------|
+| `GPIOA[7:0]` | switch[7:0] |
+| `GPIOB[7:0]` | LED[7:0] |
+| `GPIOC[7:0]` | fnd_data[7:0] |
+| `GPIOD[3:0]` | fnd_digit[3:0] |
+| `GPIOD[7:4]` | 상하좌우 Button |
+
+---
+
+### 3-5. SPI Master IP 검증
+
+- **FPGA 보드 동작 검증**
+보드 두 개를 이용해 SPI 통신 동작 확인
 https://github.com/user-attachments/assets/c0332eb1-d416-4c00-93da-54574db06e53
 
 ---
 
-### UVM 검증
+- **UVM 검증**
 
 #### 검증 시나리오
 
@@ -189,20 +189,20 @@ https://github.com/user-attachments/assets/c0332eb1-d416-4c00-93da-54574db06e53
 ---
 
 
-## AXI I2C
+### 3-6. I2C Master IP 설계
 
-### Block Diagram
+#### Block Diagram
 
 | Block Diagram 및 레지스터 주소 맵핑 |
 |------|
 | <img width="1992" height="772" alt="image" src="https://github.com/user-attachments/assets/353eb4a7-1147-4448-b183-9329224c0df3" /> | 
 
 
-### SoC 구성
+#### SoC 구성
 <img width="903" height="456" alt="image" src="https://github.com/user-attachments/assets/397cb32f-37dd-4080-aef1-072a437f3d44" />
 
 
-### GPIO 구성
+#### GPIO 구성
 
 | 포트 | 연결 |
 |------|------|
@@ -212,20 +212,11 @@ https://github.com/user-attachments/assets/c0332eb1-d416-4c00-93da-54574db06e53
 | `GPIOD[3:0]` | fnd_digit[3:0] |
 | `GPIOD[7:4]` | 상하좌우 Button |
 
-
 ---
 
+### 3-7. I2C Master IP 검증
 
-| I2C Firmware 계층 구조 |
-|------|
-| <img width="1550" height="757" alt="image" src="https://github.com/user-attachments/assets/347d5679-ba0a-4b39-ada3-a43d1808f9d1" /> |
-
-
----
-
-## AXI I2C 검증
-
-### FPGA 보드 동작 검증
+- **FPGA 보드 동작 검증**
 
 https://github.com/user-attachments/assets/ca08216b-e776-4630-9610-6959718e62ab
 
