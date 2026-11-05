@@ -76,8 +76,7 @@
 
 | Timing Diagram | FSM |
 | ------ | ------ |
-| <img width="900" height="496" alt="image" src="https://github.com/user-attachments/assets/3a0368a7-5567-49df-af69-80b60c66666f" /> | <img width="437" height="503" alt="image" src="https://github.com/user-attachments/assets/6db828ed-522a-4281-beb4-a6bdccabc049" />
- |
+| <img width="900" height="496" alt="image" src="https://github.com/user-attachments/assets/3a0368a7-5567-49df-af69-80b60c66666f" /> | <img width="550" height="810" alt="image" src="https://github.com/user-attachments/assets/84a18973-26cf-432e-888a-31c3925fe53c" /> |
 
 
 
